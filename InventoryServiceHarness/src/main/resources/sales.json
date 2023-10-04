@@ -1,0 +1,272 @@
+[
+  {
+    "guid": "75290ab7-e846-42c8-bd6c-ec865b0a7fbb",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 2",
+    "salesAmount": 39082,
+    "sales": 96,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "19c2014e-4236-4c31-a861-5d9140ae9349",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "salesAmount": 56137,
+    "sales": 53,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "48de9659-f327-4fa5-8473-8bef1a230c38",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 1",
+    "salesAmount": 40496,
+    "sales": 100,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "8ad6072b-5e25-4401-8ac4-61db047b8c22",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 2",
+    "salesAmount": 40001,
+    "sales": 91,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "efaef7cc-51a9-432e-b0a6-f47470e27616",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 2",
+    "salesAmount": 58596,
+    "sales": 69,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "8f82da3f-4c34-4bde-be83-8c45f9e7bd88",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 1",
+    "salesAmount": 43125,
+    "sales": 108,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "33b986a8-2393-4119-81e7-87d77a99ee63",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 1",
+    "salesAmount": 21090,
+    "sales": 90,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "62aceb31-988e-4fb1-992e-4323692c006a",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 1",
+    "salesAmount": 44690,
+    "sales": 77,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "8453cdd1-d98a-49e3-9d51-507ca3dc7a3c",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 1",
+    "salesAmount": 44181,
+    "sales": 94,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "e52cb02d-6452-4d24-a2e9-890b3da743d2",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 1",
+    "salesAmount": 56152,
+    "sales": 92,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "27d14ace-1f2d-4aff-9c6d-e1b0dd799e54",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 2",
+    "salesAmount": 26484,
+    "sales": 88,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "34a5f53d-7329-4141-86c0-4db657da5c57",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 2",
+    "salesAmount": 39592,
+    "sales": 67,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "7cdf875f-dc19-4203-976b-e0bb23027b2b",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 2",
+    "salesAmount": 50302,
+    "sales": 101,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "595fd816-5b7e-48ec-8c85-1ae078d9716c",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "salesAmount": 59910,
+    "sales": 75,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "e9d198a7-bfe4-4236-b1a0-34da5b2f9ed9",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "salesAmount": 59492,
+    "sales": 47,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "bdfbbeb0-770b-49cf-9ecf-b1b7c7b92c3e",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 1",
+    "salesAmount": 43096,
+    "sales": 82,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "f842a731-22b0-4c9c-a7cd-3cff5bee16d8",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "salesAmount": 26810,
+    "sales": 67,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "1f04f9d8-ad31-4532-9e0a-ebb56c91528d",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 2",
+    "salesAmount": 44956,
+    "sales": 116,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "f513d09a-408c-47e4-80c8-34d9be8267e5",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 2",
+    "salesAmount": 20808,
+    "sales": 74,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "f83e1b0a-ac64-4f1b-aa4d-3c635d561df1",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "salesAmount": 29589,
+    "sales": 62,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "20ea8172-0556-47b1-af21-6d00da75c923",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "salesAmount": 27554,
+    "sales": 61,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "11a84972-c3c7-4eb2-8ff0-d9f707cf2d7c",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "salesAmount": 53305,
+    "sales": 49,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "c3e4ffbd-49f6-412a-b1bb-91b42b17a676",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 1",
+    "salesAmount": 48141,
+    "sales": 70,
+    "date": "02-10-2023"
+  },
+  {
+    "guid": "1d0e77e1-4426-434d-8858-668ef80f9367",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 1",
+    "salesAmount": 53562,
+    "sales": 78,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "7ea3f0d0-735e-481c-afb5-108e35b0b597",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 2",
+    "salesAmount": 34288,
+    "sales": 52,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "94904bb9-ffd7-41d1-a3bf-a1a64fc13ab5",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "salesAmount": 20300,
+    "sales": 114,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "8184fb27-9bf6-4095-a5ee-c5538e64663a",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "salesAmount": 47392,
+    "sales": 93,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "bd860693-a51a-4baf-816f-605edf816c5e",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 1",
+    "salesAmount": 34979,
+    "sales": 75,
+    "date": "03-10-2023"
+  },
+  {
+    "guid": "99c160da-c4ce-4d74-ba4a-f8cf3a2df76b",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 2",
+    "salesAmount": 35775,
+    "sales": 110,
+    "date": "01-10-2023"
+  },
+  {
+    "guid": "4632cc00-8f55-45b0-bb0b-5e8a17fb4c46",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 1",
+    "salesAmount": 26785,
+    "sales": 105,
+    "date": "02-10-2023"
+  }
+]

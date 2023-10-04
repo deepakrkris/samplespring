@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "db5e5a37-487b-4df7-a428-2d2348fdff2c",
+		"name": "Service Manager Load Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "276033"
+	},
+	"item": [
+		{
+			"name": "samsung",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<canvas id=\"myChart\"  height=\"150\"></canvas>",
+							"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+							"<script>",
+							"var ctx = document.getElementById('myChart');",
+							"var myChart = new Chart(ctx, {",
+							"    type: 'bar',",
+							"    data: {",
+							"        labels: [],",
+							"        datasets: [{",
+							"        label: '',",
+							"            data: [12, 19, 3, 5],",
+							"            backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
+							"            backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
+							"        }]",
+							"    },",
+							"    options: {",
+							"    legend: { display: false },",
+							"        title: {",
+							"        display: true,",
+							"        text: 'Sales'",
+							"        },",
+							"    scales: {",
+							"    \t\t\t\txAxes: [{",
+							"    \t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\tscaleLabel: {",
+							"    \t\t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\t\tlabelString: 'Dates'",
+							"    \t\t\t\t\t}",
+							"    \t\t\t\t}],",
+							"    \t\t\t\tyAxes: [{",
+							"    \t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\tscaleLabel: {",
+							"    \t\t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\t\tlabelString: 'Sales'",
+							"    \t\t\t\t\t}",
+							"    \t\t\t\t}]",
+							"    \t\t}",
+							"    }",
+							"    ",
+							"});",
+							"",
+							"pm.getData(function (err, value) {",
+							"            myChart.data.labels = value.sales.map(item => item.date)",
+							"    \t    myChart.data.datasets[0].data = value.sales.map(item => item.sales) ;",
+							"    \t    myChart.update();",
+							"});    \t",
+							"    \t",
+							"</script>`;",
+							"",
+							"var response = pm.response.json();",
+							"",
+							"pm.visualizer.set(template, {",
+							"    sales: response[\"sales\"]",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/invoke?brand=samsung&date=__fromDate:01-01-2023",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"invoke"
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "samsung"
+						},
+						{
+							"key": "date",
+							"value": "__fromDate:01-01-2023"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "iphone",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<canvas id=\"myChart\"  height=\"150\"></canvas>",
+							"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+							"<script>",
+							"var ctx = document.getElementById('myChart');",
+							"var myChart = new Chart(ctx, {",
+							"    type: 'line',",
+							"    data: {",
+							"        labels: [],",
+							"        datasets: [{",
+							"            label: '',",
+							"            data: [12, 19, 3, 5],",
+							"            borderColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
+							"        }, {",
+							"            label: '',",
+							"            data: [12, 19, 3, 5],",
+							"            borderColor: [\"#3cba9f\", \"#e8c3b9\",\"#c45850\",\"#8e5ea2\",\"#3e95cd\"],",
+							"        }]",
+							"    },",
+							"    options: {",
+							"    legend: { display: false },",
+							"        title: {",
+							"        display: true,",
+							"        text: 'Sales vs Stock'",
+							"        },",
+							"    scales: {",
+							"    \t\t\t\txAxes: [{",
+							"    \t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\tscaleLabel: {",
+							"    \t\t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\t\tlabelString: 'Brand'",
+							"    \t\t\t\t\t}",
+							"    \t\t\t\t}],",
+							"    \t\t\t\tyAxes: [{",
+							"    \t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\tscaleLabel: {",
+							"    \t\t\t\t\t\tdisplay: true,",
+							"    \t\t\t\t\t\tlabelString: 'Sales'",
+							"    \t\t\t\t\t}",
+							"    \t\t\t\t}]",
+							"    \t\t}",
+							"    }",
+							"    ",
+							"});",
+							"",
+							"pm.getData(function (err, value) {",
+							"        myChart.data.labels = value.labels",
+							"        myChart.data.datasets[0].data = value.sales;",
+							"        myChart.data.datasets[1].data = value.stock;",
+							"    \tmyChart.update();",
+							"});    \t",
+							"    \t",
+							"</script>`;",
+							"",
+							"var response = pm.response.json();",
+							"",
+							"var labels = Object.keys(response)",
+							"",
+							"let sales = []",
+							"let stock = []",
+							"",
+							"for (let model of labels) {",
+							"   sales.push(response[model].sales)",
+							"   stock.push(response[model].availableStock)",
+							"}",
+							"",
+							"pm.visualizer.set(template, {",
+							"    labels: Object.keys(response),",
+							"    sales: sales,",
+							"    stock: stock",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/invoke/aggregateByModel?brand=iphone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"invoke",
+						"aggregateByModel"
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "iphone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sony",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/invoke?brand=sony",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"invoke"
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "sony"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadtest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							"for (let i = 1; i < 100; i++) {",
+							"   pm.request.addQueryParams(\"mockParam\" + i + \"=123\");",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/invoke?mockParam1=1&mockParam200=2&mockParam400=3&mockParam500=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"invoke"
+					],
+					"query": [
+						{
+							"key": "mockParam1",
+							"value": "1"
+						},
+						{
+							"key": "mockParam200",
+							"value": "2"
+						},
+						{
+							"key": "mockParam400",
+							"value": "3"
+						},
+						{
+							"key": "mockParam500",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

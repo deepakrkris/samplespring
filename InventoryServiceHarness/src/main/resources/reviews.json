@@ -1,0 +1,272 @@
+[
+  {
+    "guid": "8a451daf-ed89-4e06-9e22-200bf29af310",
+    "customerName": "Tabatha Conrad",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 1",
+    "rating": 6.4,
+    "comment": "ok"
+  },
+  {
+    "guid": "863fa6d4-c046-4af6-bf57-f7e7123b083d",
+    "customerName": "Little Harvey",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "rating": 6.4,
+    "comment": "manageable"
+  },
+  {
+    "guid": "6252637b-7ebc-45a7-8c9f-b431f63e7a5f",
+    "customerName": "Consuelo Macias",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "rating": 6.7,
+    "comment": "manageable"
+  },
+  {
+    "guid": "bce9841a-a6fc-4aaf-a6dd-1a5d0ce46c23",
+    "customerName": "Jill Banks",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 2",
+    "rating": 8.8,
+    "comment": "manageable"
+  },
+  {
+    "guid": "4a440d9d-dd66-4f1d-bc81-745efa93a6d1",
+    "customerName": "Louise Puckett",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 1",
+    "rating": 7.1,
+    "comment": "ok"
+  },
+  {
+    "guid": "44f3ece5-d977-45ca-9481-9da27328cabb",
+    "customerName": "Wilder Savage",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 2",
+    "rating": 9.2,
+    "comment": "ok"
+  },
+  {
+    "guid": "f8f45b89-6826-472c-a606-7a1932f4b9cf",
+    "customerName": "Allen Potts",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "rating": 7.5,
+    "comment": "ok"
+  },
+  {
+    "guid": "745ee75e-5655-4c8d-b982-392df33712f4",
+    "customerName": "Booker Turner",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 1",
+    "rating": 8.9,
+    "comment": "manageable"
+  },
+  {
+    "guid": "bea9a39c-ab8f-4382-8a43-3181a92704d9",
+    "customerName": "Norma Foster",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 2",
+    "rating": 7.3,
+    "comment": "excited"
+  },
+  {
+    "guid": "b3034fcd-0e79-4d2a-9e7a-3b1ebd10dbec",
+    "customerName": "Mckay Finley",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 1",
+    "rating": 8,
+    "comment": "ok"
+  },
+  {
+    "guid": "50f5dcec-56db-4715-aeb9-6da81427e4d9",
+    "customerName": "Foster Head",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 2",
+    "rating": 8.5,
+    "comment": "excited"
+  },
+  {
+    "guid": "b245a419-1e35-466e-9dd4-d39517c5c6ba",
+    "customerName": "Weber Schultz",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "rating": 9.1,
+    "comment": "manageable"
+  },
+  {
+    "guid": "5376d595-5e1d-49a9-b46f-96a0c8443128",
+    "customerName": "Stein Frederick",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 2",
+    "rating": 7.4,
+    "comment": "ok"
+  },
+  {
+    "guid": "718c8c4c-2414-484e-8b15-f3887d74e2b5",
+    "customerName": "Mitzi Estrada",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 2",
+    "rating": 9,
+    "comment": "manageable"
+  },
+  {
+    "guid": "872ae4fc-b685-4a36-be9f-3dd0d0b7b1ea",
+    "customerName": "Belinda Franks",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 2",
+    "rating": 6.7,
+    "comment": "manageable"
+  },
+  {
+    "guid": "3d17dfe3-fa38-4159-a903-7557df48600a",
+    "customerName": "Alexis Harris",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 2",
+    "rating": 6.8,
+    "comment": "excited"
+  },
+  {
+    "guid": "1aadb58a-386a-4fda-bf92-40e1df2cc454",
+    "customerName": "Cline Hughes",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 1",
+    "rating": 6,
+    "comment": "manageable"
+  },
+  {
+    "guid": "c0fe4efd-6b4e-4ce2-8f4c-ccfb036e50c7",
+    "customerName": "Ethel Mathis",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 1",
+    "rating": 9.5,
+    "comment": "excited"
+  },
+  {
+    "guid": "b5e8b44b-b26b-4cb5-aebc-c1891f302e56",
+    "customerName": "Leonard Mcneil",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "rating": 6.5,
+    "comment": "excited"
+  },
+  {
+    "guid": "d2b55cc3-f3fd-4bd4-8d56-3c8e1305a233",
+    "customerName": "Petersen Shaw",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 2",
+    "rating": 9.7,
+    "comment": "excited"
+  },
+  {
+    "guid": "8a893533-2447-4cdf-b5c6-df76cefe9d74",
+    "customerName": "Tanya Nguyen",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 2",
+    "rating": 7,
+    "comment": "manageable"
+  },
+  {
+    "guid": "da02694b-0e70-47c8-8e4d-5fc2c724861c",
+    "customerName": "Constance Wiley",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 1",
+    "rating": 6.9,
+    "comment": "excited"
+  },
+  {
+    "guid": "c7c2918a-9d76-4c81-9d5b-f24f9c30628e",
+    "customerName": "Combs Cardenas",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 1",
+    "rating": 6.9,
+    "comment": "excited"
+  },
+  {
+    "guid": "b1613178-8507-4aff-8cbd-4fa0594ad983",
+    "customerName": "Charmaine Rodgers",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung notes 2",
+    "rating": 8.8,
+    "comment": "excited"
+  },
+  {
+    "guid": "30025a91-448d-41dd-b0ff-7ba58a8bfb7a",
+    "customerName": "Neva Phillips",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony M 2",
+    "rating": 8.1,
+    "comment": "ok"
+  },
+  {
+    "guid": "e99a7f6d-2280-4d28-8376-04a88813a6d6",
+    "customerName": "Morgan Morrison",
+    "category": "smartphones",
+    "brand": "samsung",
+    "model": "samsung galaxy 1",
+    "rating": 9.6,
+    "comment": "manageable"
+  },
+  {
+    "guid": "d9c879bb-b9c1-4985-b9b8-eab0c8a9650d",
+    "customerName": "Vicky Schneider",
+    "category": "smartphones",
+    "brand": "sony",
+    "model": "sony K 2",
+    "rating": 7.2,
+    "comment": "excited"
+  },
+  {
+    "guid": "49acdec9-4683-4bbd-ba4c-8a35483a0205",
+    "customerName": "Marisa Shepard",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "rating": 7.3,
+    "comment": "excited"
+  },
+  {
+    "guid": "98a5627e-224e-4f15-b6f0-1e77bf1e7e70",
+    "customerName": "Harrell Hanson",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone se 2",
+    "rating": 8.4,
+    "comment": "manageable"
+  },
+  {
+    "guid": "2d86c89e-ab34-48dc-914f-f81ac62a4f7a",
+    "customerName": "Padilla Carlson",
+    "category": "smartphones",
+    "brand": "iphone",
+    "model": "iphone plus 2",
+    "rating": 7.2,
+    "comment": "ok"
+  }
+]
