@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "samsung",
+			"name": "Report Samsung Sales",
 			"event": [
 				{
 					"listen": "test",
@@ -23,10 +23,10 @@
 							"    data: {",
 							"        labels: [],",
 							"        datasets: [{",
-							"        label: '',",
+							"            label: '',",
 							"            data: [12, 19, 3, 5],",
-							"            backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
-							"            backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
+							"            backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\", \"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
+							"            backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\", \"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],",
 							"        }]",
 							"    },",
 							"    options: {",
@@ -101,7 +101,7 @@
 			"response": []
 		},
 		{
-			"name": "iphone",
+			"name": "Report Iphone models sales vs Stock",
 			"event": [
 				{
 					"listen": "test",
@@ -208,7 +208,125 @@
 			"response": []
 		},
 		{
-			"name": "sony",
+			"name": "Report Sony",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<h3>Reviews</h3>",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>ID</th>",
+							"        <th>Guid</th>",
+							"        <th>Customer Name</th>",
+							"        <th>Category</th>",
+							"        <th>Brand</th>",
+							"        <th>Model</th>",
+							"        <th>Rating</th>",
+							"        <th>Comment</th>",
+							"    </tr>",
+							"    ",
+							"    {{#each response.reviews}}",
+							"        <tr>",
+							"            <td>{{id}}</td>",
+							"            <td>{{guid}}</td>",
+							"            <td>{{customerName}}</td>",
+							"            <td>{{category}}</td>",
+							"            <td>{{brand}}</td>",
+							"            <td>{{model}}</td>",
+							"            <td>{{rating}}</td>",
+							"            <td>{{comment}}</td>",
+							"        </tr>",
+							"    {{/each}}",
+							"</table>",
+							"",
+							"<h3>Stocks</h3>",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>ID</th>",
+							"        <th>Guid</th>",
+							"        <th>Category</th>",
+							"        <th>Brand</th>",
+							"        <th>Model</th>",
+							"        <th>Description</th>",
+							"        <th>Release Date</th>",
+							"        <th>Available Stock</th>",
+							"        <th>Price</th>",
+							"        <th>Discount</th>",
+							"        <th>Company</th>",
+							"        <th>Address</th>",
+							"        <th>Zip</th>",
+							"        <th>Email</th>",
+							"    </tr>",
+							"    ",
+							"    {{#each response.stocks}}",
+							"        <tr>",
+							"            <td>{{id}}</td>",
+							"            <td>{{guid}}</td>",
+							"            <td>{{category}}</td>",
+							"            <td>{{brand}}</td>",
+							"            <td>{{model}}</td>",
+							"            <td>{{description}}</td>",
+							"            <td>{{releaseDate}}</td>",
+							"            <td>{{availableStock}}</td>",
+							"            <td>{{price}}</td>",
+							"            <td>{{discount}}</td>",
+							"            <td>{{company}}</td>",
+							"            <td>{{address}}</td>",
+							"            <td>{{zip}}</td>",
+							"            <td>{{email}}</td>",
+							"        </tr>",
+							"    {{/each}}",
+							"</table>",
+							"",
+							"<h3>Sales</h3>",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>ID</th>",
+							"        <th>Guid</th>",
+							"        <th>Category</th>",
+							"        <th>Brand</th>",
+							"        <th>Model</th>",
+							"        <th>Sales Amount</th>",
+							"        <th>Sales</th>",
+							"        <th>Date</th>",
+							"    </tr>",
+							"    ",
+							"    {{#each response.sales}}",
+							"        <tr>",
+							"            <td>{{id}}</td>",
+							"            <td>{{guid}}</td>",
+							"            <td>{{category}}</td>",
+							"            <td>{{brand}}</td>",
+							"            <td>{{model}}</td>",
+							"            <td>{{salesAmount}}</td>",
+							"            <td>{{sales}}</td>",
+							"            <td>{{date}}</td>",
+							"        </tr>",
+							"    {{/each}}",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return {response: pm.response.json()};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -233,7 +351,7 @@
 			"response": []
 		},
 		{
-			"name": "loadtest",
+			"name": "loadtest-iteration1",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -253,7 +371,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9090/invoke?mockParam1=1&mockParam200=2&mockParam400=3&mockParam500=5",
+					"raw": "http://localhost:9090/invoke?brand=iphone",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -264,20 +382,92 @@
 					],
 					"query": [
 						{
-							"key": "mockParam1",
-							"value": "1"
+							"key": "brand",
+							"value": "iphone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadtest-iteration2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							"for (let i = 1; i < 100; i++) {",
+							"   pm.request.addQueryParams(\"mockParam\" + i + \"=123\");",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/invoke?brand=sony",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"invoke"
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "sony"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadtest-iteration3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							"for (let i = 1; i < 100; i++) {",
+							"   pm.request.addQueryParams(\"mockParam\" + i + \"=123\");",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/invoke?brand=samsung&date=__fromDate:01-01-2023",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"invoke"
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "samsung"
 						},
 						{
-							"key": "mockParam200",
-							"value": "2"
-						},
-						{
-							"key": "mockParam400",
-							"value": "3"
-						},
-						{
-							"key": "mockParam500",
-							"value": "5"
+							"key": "date",
+							"value": "__fromDate:01-01-2023"
 						}
 					]
 				}

@@ -124,17 +124,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ServiceManager/src/main/com/project/servicemanager/registry/ListIntersection.java</url>
-          <line>34</line>
+          <line>39</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ServiceManager/src/main/com/project/servicemanager/api/ServiceManager.java</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/ServiceManager/src/main/com/project/servicemanager/api/ServiceManager.java</url>
-          <line>32</line>
+          <line>33</line>
           <properties field="ThreadPoolSize" class="com.project.servicemanager.api.ServiceManager" />
           <option name="timeStamp" value="22" />
         </line-breakpoint>

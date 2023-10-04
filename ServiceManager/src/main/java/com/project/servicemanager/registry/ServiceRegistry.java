@@ -1,5 +1,6 @@
 package com.project.servicemanager.registry;
 
+import com.project.servicemanager.util.InvocationException;
 import com.project.servicemanager.util.ServiceClient;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -103,8 +104,14 @@ public class ServiceRegistry {
      * @param parameters
      * @return
      */
-    public List<ServiceClient> getServicesForParams(Set<String> parameters) {
+    public List<ServiceClient> getServicesForParams(Set<String> parameters) throws InvocationException {
         List<String> intersection = null;
+
+        for (String p : parameters) {
+            if (params_to_services_map.get(p) == null) {
+                throw new InvocationException("unsupported parameter received : " + p, "ERR_ENDPARAMS");
+            }
+        }
 
         /**
          * Todo

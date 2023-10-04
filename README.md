@@ -1,9 +1,10 @@
-# Connect4 - SideStacker Game
+# Service Manager
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-![cover](https://github.com/deepakrkris/UI_workout/blob/main/day02/05_connect4/connect4_page.png?raw=true)
+![cover](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManagerUsecase.png?raw=true)
 
-SideStacker version of Connect-4
+Service Manager
 
 ## Table of Content
 
@@ -17,53 +18,47 @@ SideStacker version of Connect-4
 
 This project requires local installations of the following
 
-- [Typescript](https://www.typescriptlang.org/download)
-- [Node.js](https://nodejs.org)
+- [Java](version 11)
+- [Maven](https://maven.apache.org/install.html)
+- [Postman](https://www.postman.com/home)
 
-## Installation
+## Build and Start
 
-Step 1: Clone the repo
-
-```bash
-git@github.com:deepakrkris/UI_workout.git
-```
-
-Step 2: Build
+Step 1: Start the Inventory Service Harness
 
 ```bash
-$ cd day02/05_connect4
-$ npm run build
+cd InventoryServiceHarness
+
+mvn package
+
+java -jar target/InventoryApi-0.0.1-SNAPSHOT.jar
 ```
 
-Step 3: Start the server
+Step 2: Start the Service Manager
 
 ```bash
-$ npm start
+cd ServiceManager
+
+mvn package
+
+java -jar target/ServiceManager-0.0.1-SNAPSHOT.jar
 ```
 
-Step 4: Generate game code
+Step 3: Test with the given postman collection
 
-![generate game code](https://github.com/deepakrkris/UI_workout/blob/main/day02/05_connect4/Generate_game_code.png?raw=true)
+Import the collection and test the given APIs
 
-
-Step 5: Load game page in browser and enter user id and game code
-
-![load game page](https://github.com/deepakrkris/UI_workout/blob/main/day02/05_connect4/user_details.png?raw=true)
-
+![PostmanTest](https://github.com/deepakrkris/samplespring/blob/main/docs/Postman_Test.png?raw=true)
 
 ## Design
 
-
 ![Design](https://github.com/deepakrkris/UI_workout/blob/main/day02/05_connect4/Connect4_components.excalidraw.png?raw=true)
-
 
 ## Database
 
-TypeOrm is used and as such configurations for postgres and sqlite are available
-
-- Snapshot of a sample game state in postgres
-![Snapshot of database](https://github.com/deepakrkris/UI_workout/blob/main/day02/05_connect4/connect4_save_to_postgres.png?raw=true)
+The harness uses H2 as a local demo database
 
 ## Licence
+
 [MIT](/LICENCE)
 This repo is licenced under the MIT Licence.

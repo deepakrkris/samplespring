@@ -36,6 +36,11 @@ public class BitMapIntersection {
         ServiceBitMap intersectionSet = new ServiceBitMap(temp);
 
         for (String p : parameters) {
+            List<String> list_of_serviceIds = params_to_services_map.get(p);
+
+            if (list_of_serviceIds == null) {
+                continue;
+            }
             //List<String> list_of_serviceIds = params_to_services_map.get(p);
             intersectionSet = intersectionSet.intersection(params_to_service_bitmap.get(p));
         }

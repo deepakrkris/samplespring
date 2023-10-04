@@ -24,6 +24,11 @@ public class ListIntersection {
         log.log(Level.FINEST, "Starting set intersection : " + System.currentTimeMillis());
         for (String p : parameters) {
             List<String> list_of_serviceIds = params_to_services_map.get(p);
+
+            if (list_of_serviceIds == null) {
+                continue;
+            }
+
             if (intersection == null) {
                 intersection = new ArrayList<>(list_of_serviceIds);
             } else {

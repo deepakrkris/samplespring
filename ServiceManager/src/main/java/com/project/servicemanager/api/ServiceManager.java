@@ -2,6 +2,7 @@ package com.project.servicemanager.api;
 
 import com.project.servicemanager.registry.ServiceRegistry;
 import com.project.servicemanager.util.AggregateByModel;
+import com.project.servicemanager.util.InvocationException;
 import com.project.servicemanager.util.ServiceClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -52,22 +53,27 @@ public class ServiceManager {
      */
     @RequestMapping(value = "/invoke", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> invoke(@RequestParam Map<String, Object> queryParams) throws InterruptedException, ExecutionException {
+    public ResponseEntity<Map<String, Object>> invoke(@RequestParam Map<String, Object> queryParams) throws InvocationException {
         Map<String, Object> response = new HashMap<>();
 
         List<ServiceClient> services = ServiceRegistry.getInstance().getServicesForParams(queryParams.keySet());
 
         Map<String, Future<List<Object>>> invokeFutures = new HashMap<>();
 
-        log.log(Level.FINE, "Service Manager : called services , waiting for response");
-        for (ServiceClient svc : services) {
-            invokeFutures.put(svc.getServiceId(), executor.submit(() -> svc.invoke(queryParams)));
-        }
+        try {
+            log.log(Level.FINE, "Service Manager : called services , waiting for response");
+            for (ServiceClient svc : services) {
+                invokeFutures.put(svc.getServiceId(), executor.submit(() -> svc.invoke(queryParams)));
+            }
 
-        for (Map.Entry<String, Future<List<Object>>> result : invokeFutures.entrySet()) {
-            response.put(result.getKey(), result.getValue().get());
+            for (Map.Entry<String, Future<List<Object>>> result : invokeFutures.entrySet()) {
+                response.put(result.getKey(), result.getValue().get());
+            }
+        } catch (InterruptedException e1) {
+            throw new InvocationException(e1.getLocalizedMessage(), "ERR_SVC_INT");
+        } catch (ExecutionException e2) {
+            throw new InvocationException(e2.getLocalizedMessage(), "ERR_SVC_EXEC");
         }
-
         log.log(Level.FINE, "Service Manager : received response from all service endpoints " + System.currentTimeMillis());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -82,32 +88,38 @@ public class ServiceManager {
      */
     @RequestMapping(value = "/invoke/aggregateByModel", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Map<String, AggregateByModel>> invokeAggregateByModel(@RequestParam Map<String, Object> queryParams) throws InterruptedException {
+    public ResponseEntity<Map<String, AggregateByModel>> invokeAggregateByModel(@RequestParam Map<String, Object> queryParams) throws InvocationException {
         Map<String, AggregateByModel> response = new HashMap<>();
 
         List<ServiceClient> services = ServiceRegistry.getInstance().getServicesForParams(queryParams.keySet());
 
-        for (ServiceClient svc : services) {
-            List<Object> data = svc.invoke(queryParams);
+        try {
+            for (ServiceClient svc : services) {
+                List<Object> data = svc.invoke(queryParams);
 
-            for (Object obj : data) {
-                if (obj instanceof LinkedHashMap || obj instanceof HashMap) {
-                    Map<String, Object> objHash = (Map<String, Object>) obj;
-                    if (objHash.get("model") != null) {
-                        String model = (String) objHash.get("model");
-                        if (response.get(model) == null) {
-                            response.put(model, new AggregateByModel());
-                        }
-                        if (objHash.get("availableStock") != null) {
-                            response.get(model).setAvailableStock(response.get(model).getAvailableStock() + (Integer) objHash.get("availableStock"));
-                        }
+                for (Object obj : data) {
+                    if (obj instanceof LinkedHashMap || obj instanceof HashMap) {
+                        Map<String, Object> objHash = (Map<String, Object>) obj;
+                        if (objHash.get("model") != null) {
+                            String model = (String) objHash.get("model");
+                            if (response.get(model) == null) {
+                                response.put(model, new AggregateByModel());
+                            }
+                            if (objHash.get("availableStock") != null) {
+                                response.get(model).setAvailableStock(response.get(model).getAvailableStock() + (Integer) objHash.get("availableStock"));
+                            }
 
-                        if (objHash.get("sales") != null) {
-                            response.get(model).setSales(response.get(model).getSales() + (Integer) objHash.get("sales"));
+                            if (objHash.get("sales") != null) {
+                                response.get(model).setSales(response.get(model).getSales() + (Integer) objHash.get("sales"));
+                            }
                         }
                     }
                 }
             }
+        } catch (InterruptedException e1) {
+            throw new InvocationException(e1.getLocalizedMessage(), "ERR_SVC_INT");
+        } catch (Exception e) {
+            throw new InvocationException(e.getLocalizedMessage(), "ERR_SVC_UNKNOWN");
         }
 
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -121,7 +133,7 @@ public class ServiceManager {
      */
     @RequestMapping(value = "/invokeSequential", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> invokeSequential(@RequestParam Map<String, Object> queryParams) throws InterruptedException {
+    public ResponseEntity<Map<String, Object>> invokeSequential(@RequestParam Map<String, Object> queryParams) throws InterruptedException, InvocationException {
         Map<String, Object> response = new HashMap<>();
 
         List<ServiceClient> services = ServiceRegistry.getInstance().getServicesForParams(queryParams.keySet());
