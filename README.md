@@ -25,7 +25,14 @@ This prototype implementation of a service manager has the following parts
 
 ## Test Harness
 
-This test harness is an inventory api which provides service endpoints with data loaded from json files for stocks, sales and reviews
+This test harness is an inventory api which provides service endpoints with data loaded from json files for stocks, sales and reviews.
+
+For example testing the service manager with,
+    - http://localhost:9090/invoke?brand=iphone gives the stocks, sales, reviews for iphone
+    - http://localhost:9090/invoke?brand=samsung&date=__fromDate:01-10-2023 gives the stocks from the first of october
+    - http://localhost:9090/invoke/aggregateByModel?brand=iphone, gives the aggregated sales and stock data for iphone
+
+All the above test urls are configured in the given postman collection with visualization scripts.
 
 Implementation details of the test harness are inside the `InventoryServiceHarness` folder
 
