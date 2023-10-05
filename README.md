@@ -1,20 +1,6 @@
 # Service Manager
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
 ![cover](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManagerUsecase.png?raw=true)
-
-Service Manager
-
-## Table of Content
-
-- [Requirements](#Requirements)
-- [Installation](#installation)
-- [Design](#Design)
-- [Licence](#Licence)
-- [Database](#Database)
-
-## Requirements
 
 This project requires local installations of the following
 
@@ -22,9 +8,28 @@ This project requires local installations of the following
 - [Maven](https://maven.apache.org/install.html)
 - [Postman](https://www.postman.com/home)
 
-## Build and Start
+## Table of Content
 
-`Step 1: Start the Inventory Service Harness`
+- [About](#About)
+- [Test Harness](#TestHarness)
+- [Service Manager](#ServiceManager)
+- [Postman Collection](#PostmanCollection)
+
+## About
+
+This prototype implementation of a service manager has the following parts
+
+- 1. A test harness
+- 2. The Service Manager framework
+- 3. A postman collection
+
+## Test Harness
+
+This test harness is an inventory api which provides service endpoints with data loaded from json files for stocks, sales and reviews
+
+Implementation details of the test harness are inside the `InventoryServiceHarness` folder
+
+`Build and start the Inventory Service Harness`
 
 - The inventory service starts in port 8080
 
@@ -36,7 +41,13 @@ mvn package
 java -jar target/InventoryApi-0.0.1-SNAPSHOT.jar
 ```
 
-`Step 2: Start the Service Manager`
+## Service Manager
+
+The Service Manager is implemented as a Spring Boot application, more details on the requirements and implementation
+are in the `ServiceManager` folder. This implementation looks the core of the solution to identify services from params
+as a Set Intersection problem. There are various set intersection discussed like List, BitMap in the README.md of the ServiceManager project
+
+`Build and start the Service Manager`
 
 - The service manager starts in port 9090, inventory service must be started for the service manager to start successfully
 
@@ -48,25 +59,13 @@ mvn package
 java -jar target/ServiceManager-0.0.1-SNAPSHOT.jar
 ```
 
-`Step 3: Test with the given postman collection`
+## Postman Collection
 
-Import the collection and test the given APIs
+The postman collection has test scripts for the test harness with params for category, model, brand, zip, sales, sales amount, available stock.
+It can test the service manager and visualize from the results, it also has a load test suite
+
+`Test with the given postman collection`
+
+Import the collection into postman and test the given APIs
 
 ![PostmanTest](https://github.com/deepakrkris/samplespring/blob/main/docs/Postman_Test.png?raw=true)
-
-## Implementation Details
-
-This implementation looks the core of the solution to identify services from params as a Set Intersection problem.
-
-There are various set intersection discussed like List , BitMap, etc in the README.md of the ServiceManager project
-
-![Design](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_BitMap_Intersection.png?raw=true)
-
-## Database
-
-The harness uses H2 as a local demo database
-
-## Licence
-
-[MIT](/LICENCE)
-This repo is licenced under the MIT Licence.
