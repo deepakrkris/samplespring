@@ -1,13 +1,3 @@
-# Service Manager
-
-![cover](./docs/ServiceManagerUsecase.png?raw=true)
-
-This project requires local installations of the following
-
-- [Java](version > 11)
-- [Maven](https://maven.apache.org/install.html)
-- [Postman](https://www.postman.com/home)
-
 ## Table of Content
 
 - [About](#About)
@@ -16,6 +6,14 @@ This project requires local installations of the following
 - [Postman Collection](#PostmanCollection)
 
 ## About
+
+![cover](./docs/ServiceManagerUsecase.png?raw=true)
+
+This project requires local installations of the following
+
+- [Java](version > 11)
+- [Maven](https://maven.apache.org/install.html)
+- [Postman](https://www.postman.com/home)
 
 This prototype implementation of a service manager has the following parts
 
