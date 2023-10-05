@@ -1,6 +1,6 @@
 # Service Manager
 
-![cover](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManagerUsecase.png?raw=true)
+![cover](./docs/ServiceManagerUsecase.png?raw=true)
 
 This project requires local installations of the following
 
