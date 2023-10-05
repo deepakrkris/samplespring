@@ -72,4 +72,4 @@ It can test the service manager and visualize from the results, it also has a lo
 
 Import the collection into postman and test the given APIs
 
-![PostmanTest](https://github.com/deepakrkris/samplespring/blob/main/docs/Postman_Test.png?raw=true)
+![PostmanTest](./docs/Postman_Test.png?raw=true)
