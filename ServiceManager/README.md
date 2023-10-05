@@ -11,6 +11,16 @@
 ## Design
 ![Design](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_Internals.png?raw=true)
 
+- The service manager starts in port 9090 and is preconfigured with endpoints of the inventory harness. The inventory service must be started for the service manager to start successfully
+
+```bash
+cd ServiceManager
+
+mvn package
+
+java -jar target/ServiceManager-0.0.1-SNAPSHOT.jar
+```
+
 ## Service Registry
 Service Registry registers all the services and initializes maps that connect the supported params to the services, which are later used for 
 set intersection.
@@ -19,7 +29,6 @@ set intersection.
 - Parameters to Services Bitmap
 
 This implementation looks the core of the solution to identify services from params as a Set Intersection problem.
-There are various set intersection discussed like List , BitMap
 
 ## List Intersection
 When a list of params are sent for querying, the java collections framework is utilized to find the intersection of all serviceIds
@@ -40,4 +49,4 @@ Every endpoint has a concurrency limit, this implementation uses one local semap
 But in a distributed scenario where multiple service managers are expected global counters should also be used.
 
 ## Concurrency
-The endpoints are to be invoked concurrently for managing call latency. A thread pool is used to assign executors and wait for turns using futures
+The endpoints are to be invoked concurrently for managing call latency. A thread pool is used to assign executors and wait for turns using futures.
