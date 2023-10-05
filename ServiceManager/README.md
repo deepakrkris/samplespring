@@ -1,72 +1,43 @@
-# Service Manager
+# Service Manager Design and Implementation
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-![cover](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManagerUsecase.png?raw=true)
-
-Service Manager
-
-## Table of Content
-
-- [Requirements](#Requirements)
-- [Installation](#installation)
 - [Design](#Design)
-- [Licence](#Licence)
-- [Database](#Database)
+- [ServiceRegistry](#ServiceRegistry)
+- [List Intersection](#ListIntersection)
+- [BitMap Intersection](#BitMapIntersection)
+- [Aggregation](#Aggregation)
+- [Endpoint Call Limit](#EndpointCallLimit)
+- [Concurrency](#Concurrency)
 
-## Requirements
+## Design
+![Design](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_Internals.png?raw=true)
 
-This project requires local installations of the following
+## Service Registry
+Service Registry registers all the services and initializes maps that connect the supported params to the services, which are later used for 
+set intersection.
 
-- [Java](version 11)
-- [Maven](https://maven.apache.org/install.html)
-- [Postman](https://www.postman.com/home)
-
-## Build and Start
-
-Step 1: Start the Inventory Service Harness
-
-- The inventory service starts in port 8080
-
-```bash
-cd InventoryServiceHarness
-
-mvn package
-
-java -jar target/InventoryApi-0.0.1-SNAPSHOT.jar
-```
-
-Step 2: Start the Service Manager
-
-- The service manager starts in port 9090, inventory service must be started for the service manager to start successfully
-
-```bash
-cd ServiceManager
-
-mvn package
-
-java -jar target/ServiceManager-0.0.1-SNAPSHOT.jar
-```
-
-Step 3: Test with the given postman collection
-
-Import the collection and test the given APIs
-
-![PostmanTest](https://github.com/deepakrkris/samplespring/blob/main/docs/Postman_Test.png?raw=true)
-
-## Implementation Details
+- Parameters to List of ServiceIds map
+- Parameters to Services Bitmap
 
 This implementation looks the core of the solution to identify services from params as a Set Intersection problem.
+There are various set intersection discussed like List , BitMap
 
-There are various set intersection discussed like List , BitMap, etc in the README.md of the ServiceManager project
+## List Intersection
+When a list of params are sent for querying, the java collections framework is utilized to find the intersection of all serviceIds
 
-![Design](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_BitMap_Intersection.png?raw=true)
+## BitMap Intersection
+When a list of params are sent for querying, a BitMap utility is used to find the intersection of all serviceIds
 
-## Database
+![Bitmap](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_BitMap_Intersection.png?raw=true)
 
-The harness uses H2 as a local demo database
+## Aggregation
+A custom aggregation endpoint is included in the ServiceManager to demo on data aggregation. It is not a generic implementation
+and is very demo specific.
 
-## Licence
+![Aggregation](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceDataAggregation_Example.png?raw=true)
 
-[MIT](/LICENCE)
-This repo is licenced under the MIT Licence.
+## Endpoint call limit
+Every endpoint has a concurrency limit, this implementation uses one local semaphore for every registered endpoint.
+But in a distributed scenario where multiple service managers are expected global counters should also be used.
+
+## Concurrency
+The endpoints are to be invoked concurrently for managing call latency. A thread pool is used to assign executors and wait for turns using futures

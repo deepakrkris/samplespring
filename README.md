@@ -24,7 +24,7 @@ This project requires local installations of the following
 
 ## Build and Start
 
-Step 1: Start the Inventory Service Harness
+`Step 1: Start the Inventory Service Harness`
 
 - The inventory service starts in port 8080
 
@@ -36,7 +36,7 @@ mvn package
 java -jar target/InventoryApi-0.0.1-SNAPSHOT.jar
 ```
 
-Step 2: Start the Service Manager
+`Step 2: Start the Service Manager`
 
 - The service manager starts in port 9090, inventory service must be started for the service manager to start successfully
 
@@ -48,7 +48,7 @@ mvn package
 java -jar target/ServiceManager-0.0.1-SNAPSHOT.jar
 ```
 
-Step 3: Test with the given postman collection
+`Step 3: Test with the given postman collection`
 
 Import the collection and test the given APIs
 
