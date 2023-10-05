@@ -9,7 +9,7 @@
 - [Concurrency](#Concurrency)
 
 ## Design
-![Design](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_Internals.png?raw=true)
+![Design](./docs/ServiceManager_Internals.png?raw=true)
 
 - The service manager starts in port 9090 and is preconfigured with endpoints of the inventory harness. The inventory service must be started for the service manager to start successfully
 
@@ -36,13 +36,13 @@ When a list of params are sent for querying, the java collections framework is u
 ## BitMap Intersection
 When a list of params are sent for querying, a BitMap utility is used to find the intersection of all serviceIds
 
-![Bitmap](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceManager_BitMap_Intersection.png?raw=true)
+![Bitmap](./docs/ServiceManager_BitMap_Intersection.png?raw=true)
 
 ## Aggregation
 A custom aggregation endpoint is included in the ServiceManager to demo on data aggregation. It is not a generic implementation
 and is very demo specific.
 
-![Aggregation](https://github.com/deepakrkris/samplespring/blob/main/docs/ServiceDataAggregation_Example.png?raw=true)
+![Aggregation](./docs/ServiceDataAggregation_Example.png?raw=true)
 
 ## Endpoint call limit
 Every endpoint has a concurrency limit, this implementation uses one local semaphore for every registered endpoint.

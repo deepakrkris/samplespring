@@ -25,9 +25,9 @@ java -jar target/InventoryApi-0.0.1-SNAPSHOT.jar
 This test harness uses a H2 database to act as a replacement for an actual database. Use http://localhost:8080/h2-console for logging in and 
 running queries against the stock, sales and reviews data loaded. Default password is `pass`
 
-![Database](https://github.com/deepakrkris/samplespring/blob/main/docs/TestHarnessH2DB.png?raw=true)
+![Database](../docs/TestHarnessH2DB.png?raw=true)
 
-![Database Queries](https://github.com/deepakrkris/samplespring/blob/main/docs/H2DB_Queries.png?raw=true)
+![Database Queries](../docs/H2DB_Queries.png?raw=true)
 
 ## Test Data
 
