@@ -67,9 +67,8 @@ java -jar target/ServiceManager-0.0.1-SNAPSHOT.jar
 
 The postman collection has test scripts with params for category, model, brand, zip, sales, sales amount, available stock.
 It can test the service manager and visualize from the results, it also has a load test suite
+Import the collection into postman and test the given APIs
 
 `Test with the given postman collection`
-
-Import the collection into postman and test the given APIs
 
 ![PostmanTest](./docs/Postman_Test.png?raw=true)
